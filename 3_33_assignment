@@ -1,0 +1,5 @@
+docker network create --driver bridge myNetwork
+docker container run -d --name elastic3 --net myNetwork --net-alias search elasticsearch:2
+docker container run -d --name elastic4 --net myNetwork --net-alias search elasticsearch:2
+docker container run --net myNetwork alpine:3.10 nslookup search
+docker container run --net myNetwork centos curl -s search:9200 
