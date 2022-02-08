@@ -1,0 +1,4 @@
+docker run -it --name pg -d -v $HOME/marek/marek/docker/postrgressData:/var/lib/postgresql/data postgres:9.6.1
+docker container logs pg
+docker run -it --name pg2 -d -v $HOME/marek/marek/docker/postrgressData:/var/lib/postgresql/data postgres:9.6.2
+docker container logs pg2
